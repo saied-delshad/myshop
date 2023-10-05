@@ -1,4 +1,4 @@
-{% extends 'theme1/base.html' %} {% load static i18n fa_calendar humanize eshop %}
+{% extends 'base.html' %} {% load static i18n fa_calendar humanize shop_tools %}
 {% block title %}{% trans 'home page' %}{% endblock %}
 {% block extra_head %}
 <link href="{% static 'theme1/style/owl.carousel.css' %}" rel="stylesheet" />
@@ -82,54 +82,18 @@
             {% endif %}
             <h5 style="margin-top: 20px;">{{product.title}}</h5>
          </a>
+         {% comment %}
          {% product_discount product as pd %}
          <span {% if pd %}style="text-decoration: line-through; font-size: 14px; color: gray;"{% endif %}>{{product.price|intcomma:False|to_persian_number}} {% get_currency %}</span>
          {% if pd %}
          <br>
          <span>{{pd}} {% get_currency %}</span>
-         {% endif %}  
+         {% endif %}
+         {% endcomment %}
       </div>
       {% endif %}
       {% endfor %}
    </div>
-   <div class="countdown justify-content-center mt-5" style="text-align: center;" data-fixTime='{{amazing.remaining_time|datetime_timer}}' data-endText="Offer ended">
-      <div class="timer-background" style="background-color: #33669954;padding: 7px;border-radius: 7px;border: 3px solid #336699; align-self: center;"></div>
-      <div class="timer-container" style="font-weight: bold; padding: 7px;">
-         <div class="running justify-content-center">
-            <timer class="time-count" style="width: 100%;">
-               <div class="row justify-content-center" style="direction: ltr;">
-                  <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-                     <span class="days"></span>
-                  </div>
-                  <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-                     <span class="hours"></span>
-                  </div>
-                  <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-                     <span class="minutes"></span>
-                  </div>
-                  <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-                     <span class="seconds"></span>
-                  </div>
-               </div>
-            </timer>
-            <br>
-         </div>
-         <div class="time-show row justify-content-center" style="text-align: center;">
-            <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-            <span> {% trans 'Seconds' %} </span>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-            <span> {% trans 'Minutes' %} </span>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-            <span> {% trans 'Hours' %} </span>
-            </div>
-            <div class="col-lg-1 col-md-2 col-3" style="text-align: center;">
-            <span> {% trans 'Days' %} </span>
-            </div>
-         </div>
-      </div>
-   </div>      
 </div>
 {% endfor %}
 {% endif %}
@@ -150,12 +114,14 @@
             {% endif %}
             <h6 style="margin-top: 20px;">{{product.title}}</h6>
          </a>
+         {% comment %}
          {% product_discount product as pd %}
          <span {% if pd %}style="text-decoration: line-through; font-size: 14px; color: gray;"{% endif %}>{{product.price|intcomma:False|to_persian_number}} {% get_currency %}</span>
          {% if pd %}
          <br>
          <span>{{pd}} {% get_currency %}</span>
          {% endif %}
+         {% endcomment %}
       </div>
       {% endfor %}
    </div>
