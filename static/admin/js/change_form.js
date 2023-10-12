@@ -14,3 +14,9 @@
         }
     }
 }
+
+$(document).ready(function(){
+    $("#productimage_set-group .add-row").hide();
+    $(".column-image_cropping_info").hide();
+    $(".dynamic-productimage_set td.delete").css("float", "right");
+})

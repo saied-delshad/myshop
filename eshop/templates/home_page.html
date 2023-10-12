@@ -113,7 +113,7 @@
             <img src="{% static 'img/default.png' %}" alt="Image">
             {% endif %}
             <h6 style="margin-top: 20px;">{{product.title}}</h6>
-            <h6>{{ product.price|intcomma:False|to_persian_number }}</h6>ریال
+            <h6>{{ product.price|intcomma:False|to_persian_number }}</h6>تومان
          </a>
          {% comment %}
          {% product_discount product as pd %}

@@ -37,3 +37,23 @@
         });
     }
 }
+
+$(".menu-item").on('click', function (){
+    console.log($(this).find('a:first').get(0).click())
+})
+
+function toggleSideMenu() {
+    $("#nav-sidebar").toggle("show");
+}
+
+$("#mobile_menu").click(function () {
+    toggleSideMenu();
+})
+
+function toggleContextMenu() {
+    $("#context-menu").toggle("show");
+}
+
+$("#user-menu").click(function () {
+    toggleContextMenu();
+})
