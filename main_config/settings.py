@@ -27,8 +27,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.humanize', #########
+    'django.contrib.humanize',
     'mptt',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'ckeditor',
     'ckeditor_uploader',
     'eshop'
@@ -43,6 +45,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 
 ROOT_URLCONF = 'main_config.urls'
 
@@ -74,7 +81,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -140,9 +146,18 @@ CKEDITOR_CONFIGS = {
             ['Smiley', 'SpecialChar'], ['Source'],
             ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['NumberedList', 'BulletedList'],
-            ['Indent','Outdent'],
+            ['Indent', 'Outdent'],
             ['Maximize'],
         ],
         'extraPlugins': 'justify,liststyle,indent',
    },
 }
+
+BANKS = {"mellat": {"logo": STATIC_URL + "banks/logos/mellat.jpg",
+                     "configs": {"terminal_id": "1111",
+                                "username": "11111",
+                                "password": "11111"},
+                     "is_active": True
+
+}}
+

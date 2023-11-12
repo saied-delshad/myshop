@@ -243,7 +243,7 @@
                         <div class="single-content-right">
                            <ul>
                               {% if product.brand %}
-                              <li style="line-height: 30px;">{% trans 'brand' %} : <a style="color: #0e4887;" href="/brand/{{product.brand.title|slugish}}">{{product.brand}}</a></li>
+                              <li style="line-height: 30px;">{% trans 'brand' %} : <a style="color: #0e4887;" href="/brand/{{product.brand.title|slugish}}/">{{product.brand}}</a></li>
                               {% endif %}
                               <li style="line-height: 30px;">{% trans 'category' %} : <a style="color: #0e4887;" href="/category/{{product.category.title | slugish}}/">{{product.category}}</a></li>
                            </ul>
@@ -557,7 +557,7 @@ $(document).ready(function() {
       });
       $('#add_to_cart').click(function(){
          $.ajax({
-            url: "/addcartitem/",
+            url: "{% url 'add_cart_item' %}",
             dataType: "json",
             type: "Post",
             async: true,

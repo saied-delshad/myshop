@@ -167,13 +167,13 @@
                                   </li>
                                 </ul>
                               </li>
+                              <li class="nav-item">
+                                  <a href="/cart/" class="cart-icon nav-link"><i class="fa fa-cart-arrow-down" style="margin-left: 7px;"></i>{% trans 'cart' %}&nbsp;(<span id="cart_count">{% cart_items_count user %}</span>)</a>
+                              </li>
                                 {% else %}
                               <li class="nav-item ml-lg-3 mr-lg-2">
                                 <a href="/login/" class="nav-link"><i class="fa far fa-user" style="margin-left: 7px;"></i>{% trans 'sign up/login' %}</a>
                                 {% endif %}
-                              </li>
-                              <li class="nav-item">
-                                  {#<a href="/cart/" class="cart-icon nav-link"><i class="fa fa-cart-arrow-down" style="margin-left: 7px;"></i>{% trans 'cart' %}&nbsp;(<span id="cart_count">{% cart_items_count user %}</span>)</a>#}
                               </li>
                             </ul>
                         </div>
